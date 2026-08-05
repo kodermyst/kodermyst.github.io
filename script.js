@@ -82,12 +82,12 @@ const terminalInput = document.getElementById('terminal-input');
 const terminalBody = document.getElementById('terminal-body');
 
 const commands = {
-'help': 'Available commands: [about, pillars, spices, notes, clear]',
+'help': 'Available commands: [about, pillars, spices, notes, clear, contactme]',
 'about': 'gadimyst.github.io is a personal space for science notes, ecology, computational experiments, and culinary chemistry.',
-'pillars': 'Focus Areas: 1. Science & Ecology  2. Automation & Workflow Logic  3. Culinary Chemistry',
+'pillars': 'Focus Areas: 1. Science & Ecology  2. Automation & Workflow Logic  3. Culinary Chemistry, Math & Physics.',
 'spices': 'Top profile aromatics: Sichuan Peppercorns (numbing sensory vibration), Cumin (earthy/warm), Bay Leaves, Star Anise.',
 'notes': 'Filter through the Notebook Entries above to explore writeups.',
-'contactme': 'Reach out via email: keenancloete@live.com, or connect on WhatsApp: +27 82 065 0066.'
+'contactme': 'Reach out via email: keenancloete@live.com, or connect on WhatsApp: +27 82 065 0066.',
 };
 
 terminalInput.addEventListener('keydown', (e) => {
