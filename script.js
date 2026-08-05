@@ -87,6 +87,7 @@ const commands = {
 'pillars': 'Focus Areas: 1. Science & Ecology  2. Automation & Workflow Logic  3. Culinary Chemistry',
 'spices': 'Top profile aromatics: Sichuan Peppercorns (numbing sensory vibration), Cumin (earthy/warm), Bay Leaves, Star Anise.',
 'notes': 'Filter through the Notebook Entries above to explore writeups.'
+'contactme': 'Reach out via email: keenancloete@live.com, or connect on WhatsApp: +27 82 065 0066.'
 };
 
 terminalInput.addEventListener('keydown', (e) => {
