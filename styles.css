@@ -1,0 +1,289 @@
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-card: rgba(22, 27, 34, 0.75);
+    --border-color: #30363d;
+    --text-main: #c9d1d9;
+    --text-heading: #f0f6fc;
+    --text-muted: #8b949e;
+    --accent-green: #3fb950;
+    --accent-cyan: #58a6ff;
+    --accent-purple: #bc8cff;
+    --accent-amber: #d29922;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'Fira Code', monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Dynamic Canvas Background */
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.35;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header / Hero */
+header {
+    margin-bottom: 3.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.brand-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--accent-green);
+    background: rgba(63, 185, 80, 0.1);
+    border: 1px solid rgba(63, 185, 80, 0.3);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--text-heading);
+    letter-spacing: -0.025em;
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 650px;
+}
+
+/* Pillars Grid */
+.pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 3.5rem;
+}
+
+.pillar-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.pillar-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-cyan);
+}
+
+.pillar-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.pillar-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-heading);
+    margin-bottom: 0.5rem;
+}
+
+.pillar-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Section Titles */
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: var(--text-heading);
+    font-weight: 600;
+}
+
+/* Filter Pills */
+.filters {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    color: var(--text-heading);
+    background: var(--bg-secondary);
+    border-color: var(--accent-purple);
+}
+
+/* Notes Feed */
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 3.5rem;
+}
+
+.note-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.note-tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.tag-science { color: var(--accent-cyan); }
+.tag-ecology { color: var(--accent-green); }
+.tag-culinary { color: var(--accent-amber); }
+.tag-code { color: var(--accent-purple); }
+
+.note-title {
+    font-size: 1.05rem;
+    color: var(--text-heading);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.note-snippet {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.note-meta {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Terminal Console */
+.terminal {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.terminal-header {
+    background: rgba(0,0,0,0.3);
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.dot-red { background: #ff5f56; }
+.dot-yellow { background: #ffbd2e; }
+.dot-green { background: #27c93f; }
+
+.terminal-title {
+    color: var(--text-muted);
+    margin-left: auto;
+    font-size: 0.75rem;
+}
+
+.terminal-body {
+    padding: 1rem;
+    min-height: 140px;
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+.terminal-line { margin-bottom: 0.4rem; }
+.prompt { color: var(--accent-green); }
+.cmd-output { color: var(--text-main); padding-left: 1rem; margin-bottom: 0.5rem; }
+
+.terminal-input-row {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem 1rem;
+}
+
+.terminal-input {
+    background: transparent;
+    border: none;
+    color: var(--text-heading);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    outline: none;
+    flex: 1;
+    margin-left: 0.5rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid var(--border-color);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+@media (max-width: 600px) {
+    h1 { font-size: 2.1rem; }
+    .section-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+}
