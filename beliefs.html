@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kodermyst // beliefs & archive</title>
-    <!-- Import Modern Font -->
+    <title>kodermyst // occult & metaphysical archive</title>
+    <!-- Import Modern Font & Mystic Display Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Inter:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-color: #070913;
-            --card-bg: rgba(19, 28, 46, 0.7);
-            --card-border: rgba(56, 189, 248, 0.15);
-            --card-hover-border: rgba(56, 189, 248, 0.5);
-            --text-main: #f1f5f9;
-            --text-muted: #94a3b8;
-            --accent-color: #38bdf8;
-            --accent-glow: rgba(56, 189, 248, 0.15);
-            --badge-bg: rgba(56, 189, 248, 0.1);
+            --bg-color: #03050c;
+            --card-bg: rgba(13, 20, 36, 0.75);
+            --card-border: rgba(168, 85, 247, 0.2);
+            --card-hover-border: rgba(236, 72, 153, 0.6);
+            --text-main: #f3e8ff;
+            --text-muted: #a78bfa;
+            --accent-purple: #c084fc;
+            --accent-pink: #f472b6;
+            --accent-cyan: #38bdf8;
+            --accent-glow: rgba(192, 132, 252, 0.25);
+            --badge-bg: rgba(168, 85, 247, 0.1);
         }
 
         body {
@@ -30,44 +32,125 @@
             margin: 0;
             padding: 3rem 1.5rem;
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(147, 51, 234, 0.05) 0%, transparent 40%);
+                radial-gradient(circle at 15% 15%, rgba(168, 85, 247, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 85% 85%, rgba(56, 189, 248, 0.06) 0%, transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.04) 0%, transparent 60%);
             background-attachment: fixed;
+            overflow-x: hidden;
         }
 
         .container {
             max-width: 860px;
             margin: 0 auto;
+            position: relative;
         }
 
         header {
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            padding: 3rem 1.5rem;
+            background: linear-gradient(135deg, rgba(20, 10, 35, 0.6) 0%, rgba(10, 20, 40, 0.6) 100%);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-radius: 24px;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 0 40px rgba(168, 85, 247, 0.1), inset 0 0 20px rgba(168, 85, 247, 0.05);
         }
 
-        header a {
-            color: var(--accent-color);
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(192, 132, 252, 0.03) 0%, transparent 70%);
+            animation: rotateGlow 30s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes rotateGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .sigil-container {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.25rem auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sigil-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px dashed rgba(192, 132, 252, 0.4);
+            border-radius: 50%;
+            animation: spinSlow 15s linear infinite;
+        }
+
+        .sigil-core {
+            font-size: 1.5rem;
+            color: var(--accent-pink);
+            text-shadow: 0 0 10px var(--accent-pink);
+            animation: pulseGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes spinSlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulseGlow {
+            0% { opacity: 0.6; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1.05); }
+        }
+
+        header a.back-link {
+            color: var(--accent-cyan);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            font-family: 'Space Mono', monospace;
             font-weight: 500;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
             margin-bottom: 1.5rem;
-            transition: opacity 0.2s;
+            transition: all 0.2s;
+            background: rgba(56, 189, 248, 0.08);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
         }
 
-        header a:hover {
-            opacity: 0.8;
+        header a.back-link:hover {
+            background: rgba(56, 189, 248, 0.15);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+            transform: translateX(-3px);
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-family: 'Cinzel Decorative', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 700;
-            margin: 0;
-            background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+            margin: 0 0 0.5rem 0;
+            background: linear-gradient(135deg, #ffffff 20%, #c084fc 60%, #f472b6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: -0.025em;
+            letter-spacing: 0.05em;
+            text-shadow: 0 0 30px rgba(192, 132, 252, 0.3);
+        }
+
+        .subtitle {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
         }
 
         .intro-card {
@@ -86,33 +169,40 @@
             content: '';
             position: absolute;
             top: 0; left: 0; width: 4px; height: 100%;
-            background: var(--accent-color);
+            background: linear-gradient(to bottom, var(--accent-purple), var(--accent-pink));
         }
 
         .intro-card p {
             margin: 0;
-            color: #cbd5e1;
+            color: #e2e8f0;
             font-size: 1.05rem;
             font-weight: 300;
         }
 
+        .intro-card em {
+            color: var(--accent-pink);
+            font-style: normal;
+            font-weight: 500;
+        }
+
         .section-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--accent-color);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--accent-purple);
             margin: 2.5rem 0 1.25rem 0;
             display: flex;
             align-items: center;
             gap: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.1em;
         }
 
         .section-title::after {
             content: '';
             flex: 1;
             height: 1px;
-            background: var(--card-border);
+            background: linear-gradient(to right, var(--card-border), transparent);
         }
 
         .links-grid {
@@ -131,13 +221,15 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            position: relative;
+            overflow: hidden;
         }
 
         .link-item:hover {
             border-color: var(--card-hover-border);
-            background: rgba(19, 28, 46, 0.9);
+            background: rgba(20, 28, 48, 0.9);
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px -6px var(--accent-glow);
+            box-shadow: 0 10px 25px -6px var(--accent-glow);
         }
 
         .link-item a {
@@ -159,7 +251,7 @@
 
         .link-item:hover a::after {
             transform: translate(2px, -2px);
-            color: var(--accent-color);
+            color: var(--accent-pink);
         }
 
         .link-item span.note {
@@ -178,14 +270,29 @@
             border-color: #f59e0b;
             box-shadow: 0 8px 20px -6px rgba(245, 158, 11, 0.15);
         }
+
+        /* Highlighted style for the new Blog section */
+        .blog-feature-item {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.15) 0%, rgba(236, 72, 153, 0.1) 100%);
+            border: 1px solid rgba(192, 132, 252, 0.4);
+        }
+        .blog-feature-item:hover {
+            border-color: var(--accent-pink);
+            box-shadow: 0 0 25px rgba(236, 72, 153, 0.25);
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <a href="index.html">&larr; Back to Home</a>
+        <div class="sigil-container">
+            <div class="sigil-ring"></div>
+            <div class="sigil-core">👁</div>
+        </div>
+        <a href="index.html" class="back-link">&larr; Back to Home</a>
         <h1>Beliefs & Compilations</h1>
+        <div class="subtitle">Occult, Metaphysics & Chaos Magic Archive</div>
     </header>
 
     <div class="intro-card">
@@ -194,35 +301,15 @@
         </p>
     </div>
 
-    <!-- Articles -->
-    <div class="section-title">Articles</div>
+    <!-- Replaced Articles Section with Blog: conceptualmolder.blogspot.com -->
+    <div class="section-title">Official Blog & Conceptual Writings</div>
     <div class="links-grid">
-        <div class="link-item"><a href="https://falteredground.blogspot.com/p/energy-explored.html" target="_blank">Energy (explored)</a></div>
-        <div class="link-item"><a href="https://falteredground.blogspot.com/p/gnosis-altered-mental-states.html" target="_blank">Gnosis (Altered States)</a></div>
-        <div class="link-item"><a href="https://falteredground.blogspot.com/p/cm-vs-psionics.html" target="_blank">Chaos Magic vs Psionics</a></div>
-        <div class="link-item"><a href="https://falteredground.blogspot.com/p/energy-manipulation-methods-compilation.html" target="_blank">Basic Guide to Energy-flow</a></div>
-        <div class="link-item">
-            <a href="https://falteredground.blogspot.com/p/energy-programming-method-compilation.html" target="_blank">Energy Programming</a>
-            <span class="note">Covers the PSI method of programming.</span>
+        <div class="link-item blog-feature-item" style="grid-column: 1 / -1;">
+            <a href="https://conceptualmolder.blogspot.com" target="_blank">
+                <strong>Conceptual Molder</strong> &mdash; Occult / Metaphysical / Chaos Magic Blog
+            </a>
+            <span class="note">Dive into dedicated essays, workings, paradigm shifts, and chaos magic explorations.</span>
         </div>
-        <div class="link-item"><a href="https://falteredground.blogspot.com/p/unleashing-thoughtforms-chaotes-guide.html" target="_blank">Short Guide to Thoughtforms</a></div>
-        <div class="link-item">
-            <a href="https://falteredground.blogspot.com/p/connections.html" target="_blank">Connections</a>
-            <span class="note">Psychic connections for affecting targets.</span>
-        </div>
-        <div class="link-item"><a href="https://falteredground.blogspot.com/p/projections.html" target="_blank">Projections</a></div>
-        <div class="link-item">
-            <a href="https://falteredground.blogspot.com/p/sensory-basics.html" target="_blank">Sensory Guide (Psionics)</a>
-            <span class="note">Auric Sight, Scanning & Remote Viewing</span>
-        </div>
-        <div class="link-item">
-            <a href="https://falteredground.blogspot.com/p/shielding-constructs.html" target="_blank">Shielding Constructs</a>
-            <span class="note">Method used to create PSI wards</span>
-        </div>
-        <div class="link-item"><a href="https://falteredground.blogspot.com/p/components-of-successful-spellwork.html" target="_blank">Successful Spellwork Components</a></div>
-        <div class="link-item"><a href="https://falteredground.blogspot.com/p/setting-up-altar.html" target="_blank">Setting Up An Altar</a></div>
-        <div class="link-item"><a href="https://falteredground.blogspot.com/p/enchanting.html" target="_blank">Enchanting</a></div>
-        <div class="link-item"><a href="https://falteredground.blogspot.com/p/sigilization.html" target="_blank">Sigilization</a></div>
     </div>
 
     <!-- Related Articles -->
